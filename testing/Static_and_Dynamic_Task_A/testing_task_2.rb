@@ -8,7 +8,7 @@ class CardGame
 
 
   def checkforAce(card)
-    if card.value = 1
+    if card.value == 1
       return true
     else
       return false
@@ -16,20 +16,21 @@ class CardGame
   end
 
   def highest_card(card1,card2)
-  if card1.value > card2.value
-    return card.name
-  else
-    card2
+    # bridge suit ranking low to high is alphabetical order:
+    # low_to_high_suit_rank = ["clubs","diamonds","hearts","spades"]
+    cards = [card1,card2]
+    cards.sort_by! {|card| [card.value, card.suit]}
+    cards.reverse!
+    return cards[0]
   end
-end
 
 
-def self.cards_total(cards)
-  total
-  for card in cards
-    total += card.value
-    return "You have a total of" + total
+  def self.cards_total(cards)
+    total
+    for card in cards
+      total += card.value
+      return "You have a total of" + total
+    end
   end
-end
 
 end
