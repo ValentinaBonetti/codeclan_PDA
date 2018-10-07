@@ -9,7 +9,6 @@
 # Correct the errors below that you spotted in task 1.
 
 require_relative('card.rb')
-# path needs folder: './card'
 class CardGame
 
 
