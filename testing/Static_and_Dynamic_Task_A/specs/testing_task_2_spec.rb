@@ -9,6 +9,7 @@ class TestCardGame < MiniTest::Test
     @card2 = Card.new("clubs",2)
     @card3 = Card.new("hearts",1)
     @card4 = Card.new("diamonds",8)
+    @cards = [@card1,@card2,@card3,@card4]
     @cardgame = CardGame.new()
   end
 
@@ -48,7 +49,7 @@ class TestCardGame < MiniTest::Test
 
   # This ranking is used in the game of bridge:
   # spades (highest), hearts, diamonds, clubs (lowest)
-  # 
+  #
   def test_highest_card_samevalue()
     expected = @card1
     actual = @cardgame.highest_card(@card1,@card2)
@@ -61,6 +62,10 @@ class TestCardGame < MiniTest::Test
     assert_equal(expected,actual)
   end
 
-
+  def test_cards_total()
+    expected = "You have a total of 13"
+    actual = CardGame.cards_total(@cards)
+    assert_equal(expected,actual)
+  end
 
 end

@@ -26,11 +26,11 @@ class CardGame
 
 
   def self.cards_total(cards)
-    total
+    total = 0
     for card in cards
       total += card.value
-      return "You have a total of" + total
     end
+    return "You have a total of " + total.to_s
   end
 
 end
