@@ -49,7 +49,6 @@ class TestCardGame < MiniTest::Test
 
   # This ranking is used in the game of bridge:
   # spades (highest), hearts, diamonds, clubs (lowest)
-  #
   def test_highest_card_samevalue()
     expected = @card1
     actual = @cardgame.highest_card(@card1,@card2)
